@@ -11,6 +11,7 @@ The system uses **n8n workflow automation**, **AI sentiment analysis**, and **st
 - [Introduction](#introduction)
 - [Problem Statement](#problem-statement)
 - [Solution](#solution)
+- [Workflow Screenshot](#workflow-screenshot)
 - [Key Features](#key-features)
 - [Tech Stack](#tech-stack)
 - [System Architecture](#system-architecture)
@@ -85,6 +86,12 @@ When a complaint is submitted via the API:
 10. The customer receives a complaint code in the API response
 
 This creates a **fully automated, end-to-end complaint handling pipeline**.
+
+---
+
+## Workflow Screenshot
+**AI Ecommerce complaint management N8N workflow**
+![Workflow Screenshot](https://raw.githubusercontent.com/MaryumAkram16/ai-ecommerce-complaint-management/main/ecom-comp.PNG?raw=true)
 
 ---
 
