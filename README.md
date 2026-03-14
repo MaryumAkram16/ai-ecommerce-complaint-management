@@ -1,331 +1,53 @@
-# AI Ecommerce Complaint Management System
+# AI E-commerce Complaint Management
 
-An automated AI-powered complaint handling system built with n8n, PostgreSQL, and Google Gemini AI.
-The system receives customer complaints through an API, analyzes them using AI, routes them to the correct department, stores them in a database, and sends alerts for high-priority issues.
+## Introduction
+This repository contains a project designed to streamline and manage complaints in e-commerce settings using AI technology. The system aims to enhance customer satisfaction by providing quick and efficient resolution to issues.
 
-It is designed for e-commerce platforms to streamline complaint handling, improve response time, and provide actionable insights.
+## Problem Statement
+E-commerce platforms often struggle with handling customer complaints effectively, leading to dissatisfaction and loss of business. Traditional methods are slow and inefficient, causing delays in response times and resolution.
 
-Table of Contents
+## Solution
+Our AI-based system automates the complaint management process, enabling faster responses and data-driven insights to improve service quality.
 
-Introduction
+## Key Features
+- **Automated Complaint Handling**: Quickly categorizes and manages complaints.
+- **User-Friendly Interface**: Intuitive design for easy navigation.
+- **Data Analytics**: Provides insights into complaint trends and resolutions.
+- **Multi-Channel Support**: Integrates with various communication platforms.
 
-Problem Statement
+## Workflow Screenshots
+![Workflow Screenshot](link-to-screenshot)
 
-Solution
+## Tech Stack
+- Frontend: React
+- Backend: Node.js
+- Database: MongoDB
+- AI: TensorFlow
 
-Key Features
+## System Architecture
+![System Architecture Diagram](link-to-architecture-diagram)
 
-Workflow Screenshot
+## API Reference
+- **GET /api/complaints**: Retrieve all complaints.
+- **POST /api/complaints**: Submit a new complaint.
+- **PUT /api/complaints/:id**: Update an existing complaint.
 
-Tech Stack
+## Security and Compliance
+We implement standard security protocols to protect user data and ensure compliance with regulations such as GDPR.
 
-System Architecture
+## Setup Guide
+1. Clone the repository.
+2. Install dependencies using `npm install`.
+3. Set up environment variables.
+4. Run the application using `npm start`.
 
-API Reference
+## Troubleshooting
+- Ensure all dependencies are installed.
+- Check environment variable configurations.
+- Consult the issues section for known bugs.
 
-Security Features
+## Contributing
+We welcome contributions! Please read our contributing guidelines and submit a pull request.
 
-Setup Guide
-
-Troubleshooting
-
-Contributing
-
-License
-
-Introduction
-
-Customer complaints are a critical part of any e-commerce business.
-Handling them efficiently requires validation, categorization, prioritization, and routing to the correct support teams.
-
-This project provides an automated complaint management workflow using n8n automation, AI analysis, and database-driven processing.
-
-The system can:
-
-Accept complaints via API
-
-Validate and normalize input
-
-Detect duplicates
-
-Analyze complaint sentiment using AI
-
-Suggest resolution actions
-
-Store data in PostgreSQL
-
-Notify teams for urgent issues
-
-Problem Statement
-
-Traditional complaint management systems face several challenges:
-
-Manual processing delays
-
-Lack of prioritization for urgent issues
-
-Poor tracking of complaint history
-
-No automated analysis of customer sentiment
-
-Limited visibility for management teams
-
-These issues lead to slow resolutions, unhappy customers, and inefficient support operations.
-
-Solution
-
-This system introduces an AI-driven complaint processing workflow that automates the entire lifecycle of a complaint.
-
-The workflow:
-
-Receives complaint data through an API webhook
-
-Validates required fields
-
-Prevents duplicate complaints
-
-Performs sentiment analysis using AI
-
-Suggests operational actions
-
-Routes complaints to the correct department
-
-Stores complaint data in PostgreSQL
-
-Sends alerts for high-priority complaints
-
-Records audit logs for tracking
-
-Key Features
-AI Complaint Analysis
-
-Uses Google Gemini AI to detect:
-
-Complaint sentiment (Negative / Neutral / Positive)
-
-Suggested action for support teams
-
-Automated Validation
-
-Ensures all required fields are present:
-
-Name
-
-Email
-
-Phone
-
-Complaint details
-
-Complaint type
-
-Priority
-
-Duplicate Detection
-
-Prevents users from submitting the same complaint multiple times.
-
-Rate Limiting
-
-Protects the API from abuse by limiting requests per IP.
-
-High Priority Alerts
-
-Automatically sends Slack alerts for urgent complaints.
-
-Audit Logging
-
-All complaint actions are recorded for monitoring and compliance.
-
-Complaint Summary API
-
-Provides a dashboard-ready summary endpoint for analytics.
-
-Workflow Screenshot
-
-(Add your n8n workflow screenshot here)
-
-Example:
-
-docs/workflow.png
-
-Tech Stack
-
-Automation
-
-n8n
-
-AI
-
-Google Gemini AI
-
-Database
-
-PostgreSQL
-
-Notifications
-
-Slack API
-
-Gmail API
-
-Backend
-
-Webhook-based API
-
-System Architecture
-Client Application
-        │
-        ▼
-Webhook API (n8n)
-        │
-        ▼
-Rate Limiting
-        │
-        ▼
-API Key Authentication
-        │
-        ▼
-Input Validation
-        │
-        ▼
-Duplicate Complaint Check
-        │
-        ▼
-AI Complaint Analysis
-        │
-        ▼
-Department Routing
-        │
-        ▼
-PostgreSQL Storage
-        │
-        ├── Slack Alert (High Priority)
-        ├── Email Confirmation
-        └── Audit Logging
-
-API Reference
-Submit Complaint
-
-Endpoint
-
-POST /webhook/eccomerce_complaints
-
-
-Headers
-
-x-api-key: YOUR_API_KEY
-
-
-Request Body
-
-{
-  "name": "John Doe",
-  "email": "john@email.com",
-  "phone": "03001234567",
-  "details": "I have not received my refund.",
-  "type": "Refund Issue",
-  "priority": "High",
-  "complaint_id": "CMP123456"
-}
-
-
-Response
-
-Your complaint has been submitted. Your complaint code is CMP123456
-
-Get Complaint Summary
-POST /webhook/eccomerce_data
-
-
-Returns analytics summary including:
-
-Total complaints
-
-Pending vs resolved
-
-Priority breakdown
-
-Department grouping
-
-Security Features
-
-The system includes several security layers:
-
-API key authentication
-
-Rate limiting (10 requests per minute per IP)
-
-Input validation
-
-Duplicate complaint protection
-
-Secure database storage
-
-Audit logging
-
-Setup Guide
-1 Install n8n
-npm install n8n -g
-
-
-or use Docker.
-
-2 Setup PostgreSQL
-
-Create required tables:
-
-ecommerce_complaints
-
-audit_logs
-
-eccomerce_services
-
-3 Configure Credentials
-
-Add credentials in n8n:
-
-PostgreSQL
-
-Slack OAuth
-
-Gmail OAuth
-
-Google Gemini API
-
-4 Import Workflow
-
-Import the provided n8n workflow JSON file into your n8n instance.
-
-5 Activate Workflow
-
-Enable the workflow and test using:
-
-POST /webhook/eccomerce_complaints
-
-Troubleshooting
-Database Error
-
-Check PostgreSQL credentials and connection.
-
-API Key Error
-
-Verify the x-api-key header matches the configured key.
-
-Slack Alerts Not Sending
-
-Ensure Slack OAuth credentials are correctly configured.
-
-Contributing
-
-Contributions are welcome.
-
-Steps:
-
-1 Fork the repository
-2 Create a feature branch
-3 Submit a pull request
-
-License
-
+## License
 This project is licensed under the MIT License.
