@@ -46,7 +46,9 @@ This allows businesses to respond to issues **faster, more consistently, and wit
 
 ## Live Demo
 
-[![Watch Demo]](https://youtu.be/IuP8mQ4_Gz4)
+## Demo Video
+
+[![Watch the demo](https://img.youtube.com/vi/IuP8mQ4_Gz4/maxresdefault.jpg)](https://youtu.be/IuP8mQ4_Gz4)
 
 ## Problem Statement
 
